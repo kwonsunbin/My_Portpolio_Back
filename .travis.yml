@@ -1,0 +1,12 @@
+language: node_js 
+node_js:
+  - "16.14.2" 
+before_install: 
+  - npm update # npm 패키지를 업데이트
+branches:
+  only:
+    - main
+notifications: # 성공 실패 여부 알림
+  email:
+    recipients:
+      - sunbin1696@gmail.com
