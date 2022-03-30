@@ -8,8 +8,6 @@ const connectDB = require('./config/db');
 const cors = require('cors');
 dotenv.config({ path: './config/config.env' });
 
-// Get account information
-
 connectDB();
 
 const app = express();
@@ -17,13 +15,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route files
 const coins = require('./routes/coins');
 
 app.use(express.json());
 app.use(cors());
 
-// Mount routers
 app.use('/api/v1/coins', coins);
 
 app.listen(process.env.PORT, () => {
